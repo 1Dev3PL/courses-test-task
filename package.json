@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build:sass": "sass styles:public/css",
+    "watch:sass": "sass --watch styles:public/css"
+  },
   "dependencies": {
     "sass": "^1.94.2"
   }
