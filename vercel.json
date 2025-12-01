@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build:sass",
+  "outputDirectory": ".",
+  "installCommand": "npm install"
+}
+

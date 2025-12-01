@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "sass styles:public/css",
     "build:sass": "sass styles:public/css",
     "watch:sass": "sass --watch styles:public/css"
   },
