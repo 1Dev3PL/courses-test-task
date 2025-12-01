@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our online courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <main class="courses">
+        <div class="courses__background">
+            <img src="images/shapes-top.svg" alt="" class="courses__bg-shape courses__bg-shape--top">
+            <img src="images/dots.svg" alt="" class="courses__bg-dots">
+            <img src="images/shapes-bottom.svg" alt="" class="courses__bg-shape courses__bg-shape--bottom">
+        </div>
+
+        <div class="courses__container">
+            <header class="courses__header">
+                <h2 class="courses__subtitle">Enjoy your studying!</h2>
+                <h1 class="courses__title">Our online courses</h1>
+            </header>
+            <div class="courses__controls">
+                <div class="courses__tabs tabs" id="tabs">
+                    <button class="tabs__item tabs__item--active" data-category="all">
+                        <span class="tabs__label">All</span>
+                        <span class="tabs__count">9</span>
+                    </button>
+                    <button class="tabs__item" data-category="marketing">
+                        <span class="tabs__label">Marketing</span>
+                        <span class="tabs__count">2</span>
+                    </button>
+                    <button class="tabs__item" data-category="management">
+                        <span class="tabs__label">Management</span>
+                        <span class="tabs__count">2</span>
+                    </button>
+                    <button class="tabs__item" data-category="hr">
+                        <span class="tabs__label">HR & Recruting</span>
+                        <span class="tabs__count">2</span>
+                    </button>
+                    <button class="tabs__item" data-category="design">
+                        <span class="tabs__label">Design</span>
+                        <span class="tabs__count">2</span>
+                    </button>
+                    <button class="tabs__item" data-category="development">
+                        <span class="tabs__label">Development</span>
+                        <span class="tabs__count">1</span>
+                    </button>
+                </div>
+                <div class="courses__search search">
+                    <input type="text" class="search__input" placeholder="Search course..." id="searchInput">
+                    <img src="images/icon-search.svg" alt="" class="search__icon">
+                </div>
+            </div>
+
+            <div class="courses__grid" id="coursesGrid"></div>
+
+            <button class="courses__load-more load-more">
+                <img src="images/icon-load.svg" alt="" class="load-more__icon">
+                <span class="load-more__text">Load more</span>
+            </button>
+        </div>
+    </main>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+

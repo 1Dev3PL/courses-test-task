@@ -1,0 +1,400 @@
+$color-white: #FFFFFF;
+$color-primary: #FF3F3A;
+$color-secondary: #FFCF2D;
+$color-success: #03CEA4;
+$color-info: #5A87FC;
+$color-warning: #F89828;
+$color-danger: #FF4242;
+$color-gray-900: #1E212C;
+$color-gray-800: #424551;
+$color-gray-700: #787A80;
+$color-gray-600: #9A9CA5;
+$color-gray-400: #D7DADD;
+$color-gray-300: #E5E8ED;
+
+$color-design: #F52F6E;
+$color-development: #7772F1;
+
+$font-family: 'Lato', sans-serif;
+
+$shadow-small: 0px 4px 4px -4px rgba(30, 33, 44, 0.03), 
+               0px 12px 10px -6px rgba(154, 156, 165, 0.04), 
+               0px 30px 24px -10px rgba(154, 156, 165, 0.05), 
+               0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+
+$shadow-regular: 0px 4px 4px -4px rgba(30, 33, 44, 0.05), 
+                 0px 12px 10px -6px rgba(154, 156, 165, 0.08), 
+                 0px 30px 24px -10px rgba(154, 156, 165, 0.1), 
+                 0px 80px 80px -20px rgba(154, 156, 165, 0.16);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: $font-family;
+    background: $color-white;
+    overflow-x: hidden;
+}
+
+.courses {
+    position: relative;
+    min-height: 100vh;
+    padding: 44px 0;
+    overflow: hidden;
+
+    &__background {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    &__bg-shape {
+        position: absolute;
+
+        &--top {
+            top: 55.2vw;
+            right: 3.8vw;
+            width: 4.4vw;
+            height: 4.4vw;
+        }
+
+        &--bottom {
+            top: 33.4vw;
+            left: 2.9vw;
+            width: 4.3vw;
+            height: 2.3vw;
+        }
+    }
+
+    &__bg-dots {
+        position: absolute;
+        top: 0.3125vw;
+        right: -1.2vw;
+        width: 8.5vw;
+        height: 9.2vw;
+        opacity: 0.8;
+    }
+
+    &__container {
+        max-width: 1230px;
+        margin: 0 auto;
+        padding: 0 clamp(16px, 4.2vw, 40px);
+        box-sizing: content-box;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: clamp(32px, 6vw, 85px);
+        padding-left: clamp(0%, 32.2%, 396px);
+        text-align: center;
+        width: fit-content;
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        font-size: clamp(12px, 0.833vw, 16px);
+        line-height: 1.5em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $color-gray-900;
+        white-space: nowrap;
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: clamp(24px, 2.396vw, 46px);
+        line-height: 1.3em;
+        color: $color-gray-900;
+        white-space: nowrap;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: clamp(24px, 5vw, 60px);
+        align-items: flex-start;
+    }
+
+    &__search {
+        max-width: 315px;
+    }
+
+    &__tabs {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2.08vw, 30px);
+        margin-bottom: clamp(32px, 6vw, 80px);
+    }
+
+    &__empty {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: $color-gray-600;
+        font-size: clamp(18px, 1.25vw, 24px);
+        padding: clamp(40px, 5vw, 80px) 0;
+    }
+
+    &__load-more {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+.search {
+    position: relative;
+    width: 100%;
+    min-width: 240px;
+
+    &__input {
+        width: 100%;
+        padding: 11px 16px;
+        font-family: $font-family;
+        font-size: 14px;
+        line-height: 1.5em;
+        color: $color-gray-900;
+        background: $color-white;
+        border: 1px solid $color-gray-400;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &::placeholder {
+            color: $color-gray-600;
+        }
+
+        &:focus {
+            border-color: $color-primary;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+    }
+}
+
+.tabs {
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 9px 19px;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: $color-primary;
+        }
+
+        &--active {
+            border-color: $color-primary;
+
+            .tabs__label,
+            .tabs__count {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__label {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.6em;
+        color: $color-gray-600;
+        transition: color 0.3s ease;
+    }
+
+    &__count {
+        font-weight: 900;
+        font-size: 10px;
+        line-height: 1.5em;
+        color: $color-gray-600;
+        transition: color 0.3s ease;
+        align-self: flex-start;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: $color-white;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    box-shadow: $shadow-small;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: $shadow-regular;
+        transform: translateY(-0.26vw);
+    }
+
+    &--hidden {
+        display: none;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+        border: 1px solid $color-gray-300;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        height: 100%;
+    }
+
+    &__badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 1px 8px;
+        width: fit-content;
+        font-size: 14px;
+        line-height: 1.5em;
+        color: $color-white;
+        border-radius: 4px;
+
+        &--marketing {
+            background: $color-success;
+        }
+
+        &--design {
+            background: $color-design;
+        }
+
+        &--hr {
+            background: $color-warning;
+        }
+
+        &--management {
+            background: $color-info;
+        }
+
+        &--development {
+            background: $color-development;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.5em;
+        color: $color-gray-900;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__price {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.5em;
+        color: $color-danger;
+    }
+
+    &__divider {
+        width: 1px;
+        height: 1em;
+        background: $color-gray-700;
+    }
+
+    &__author {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5em;
+        color: $color-gray-700;
+    }
+}
+
+.load-more {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin: 1px 0;
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.6em;
+        color: $color-gray-800;
+    }
+}
+
+@media (max-width: 1200px) {
+    .courses {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .courses {
+        &__controls {
+            flex-direction: column;
+        }
+
+        &__tabs {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }   
+}
